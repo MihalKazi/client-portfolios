@@ -6,7 +6,7 @@ export default function Navbar() {
     { href: '#about', label: 'Brief' },
     { href: '#experience', label: 'Fieldwork' },
     { href: '#projects', label: 'Investigations' },
-    { href: '#skills', label: 'Methodology' },
+  { href: '#methodology', label: 'Methodology' },
   ];
 
   return (

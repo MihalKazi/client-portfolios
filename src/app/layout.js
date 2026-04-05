@@ -22,8 +22,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${crimsonPro.variable} ${ibmPlexMono.variable}`}>
+    // Added suppressHydrationWarning here to prevent extension crashes
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body 
+        className={`${crimsonPro.variable} ${ibmPlexMono.variable}`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

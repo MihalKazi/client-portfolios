@@ -2,24 +2,15 @@
 import { motion } from 'framer-motion';
 import Typewriter from './Typewriter';
 
-export default function Experience() {
-  const experiences = [
-    {
-      meta: "Current // Research Focus",
-      title: "Digital Rights Researcher",
-      description: "Conducting research on information integrity, online disinformation, and digital rights issues. Analyzing technological impacts on democratic processes and vulnerable communities across different regions."
-    },
-    {
-      meta: "Ongoing // Investigation",
-      title: "Information Integrity Analyst",
-      description: "Investigating patterns of coordinated inauthentic behavior, platform manipulation, and disinformation campaigns. Developing methodologies for detecting and documenting information operations."
-    },
-    {
-      meta: "Collaborative // Advocacy",
-      title: "Digital Rights Advocate",
-      description: "Working with international organizations to promote digital rights, internet freedom, and responsible technology policies. Contributing to capacity building initiatives for journalists and civil society."
-    }
-  ];
+// 1. Add { experiences } inside the parentheses to accept the data!
+export default function Experience({ experiences }) {
+  
+  // 2. We removed the hardcoded 'const experiences = [...]' array!
+
+  // 3. Add a quick safety check in case the client deletes all their data
+  if (!experiences || experiences.length === 0) {
+    return null; 
+  }
 
   return (
     <section id="experience" className="py-20 border-b-2 border-ink">
@@ -32,6 +23,7 @@ export default function Experience() {
       </motion.h2>
       
       <div className="relative border-l-2 border-ink ml-4 md:ml-8">
+        {/* The component now loops through whatever Sanity gives it! */}
         {experiences.map((exp, index) => (
           <div key={index} className="mb-12 pl-8 relative group">
             {/* Timeline Node */}
